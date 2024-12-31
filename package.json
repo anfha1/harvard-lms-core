@@ -1,0 +1,28 @@
+{
+  "name": "harvard-lms-core",
+  "version": "1.0.0",
+  "description": "Lõi trang web công ty giáo dục harvard",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node main.js",
+    "dev": "nodemon main",
+    "prod": "pm2 start main --name main"
+  },
+  "author": "david",
+  "license": "ISC",
+  "dependencies": {
+    "afpk": "file:../../afpk",
+    "axios": "^1.6.8",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.1.1",
+    "fast-xml-parser": "^4.3.2",
+    "fs-extra": "^11.2.0",
+    "luxon": "^3.4.4",
+    "mongodb": "^6.8.0",
+    "natural-sort": "^1.0.0",
+    "nodemon": "^3.1.4",
+    "socket.io": "^4.7.5",
+    "ua-parser-js": "^1.0.38"
+  }
+}
