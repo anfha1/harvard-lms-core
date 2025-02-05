@@ -1,28 +1,36 @@
-import { MongoDb } from "afpk"
+import admin from 'firebase-admin'
+import { helper } from 'afpk'
 
-import __config from './../config/index.mjs'
+// Khởi tạo Firebase Admin SDK với thông tin xác thực của dự án
+admin.initializeApp({
+  credential: admin.credential.cert('./storage/harvard-af3b0-firebase-adminsdk-5iont-166971ea05.json'),
+  databaseURL: 'https://harvard-af3b0.firebaseio.com'
+});
 
-const mongo = new MongoDb(__config.mongodb.uri);
-
-export function getId(tb_name) {
-  let db = mongo.client.db('db_af')
-  let coll = db.collection("tb_ids")
-
-  return new Promise((resolve, reject) => {
-    coll.findOneAndUpdate({ name: tb_name }, { $inc: { val: 1 } }, { returnDocument: 'after' })
-    .then(data => {
-      if (data === null) {
-        coll.insertOne({ name: tb_name, val: 1 })
-        .then(() => {
-          resolve(1)
-        })
-        .catch(reject)
-      } else {
-        resolve(data.val)
-      }
-    })
-    .catch(reject)
-  })
+// Lấy tham chiếu đến Firestore
+export const db = admin.firestore()
+export var indexCollections = {
+  'device': 0,
 }
 
-export default mongo;
+const docIndexCollectionsRef = db.collection('config').doc('index-collections')
+
+const updateIndexCollections = () => {
+  docIndexCollectionsRef.set(indexCollections)
+  .then(() => {
+    helper.flog.log('db', 'Document written successfully!');
+  })
+  .catch((error) => {
+    helper.flog.error('db', 'Error writing document: ', error);
+  });
+}
+
+docIndexCollectionsRef.get()
+.then((doc) => {
+  let docData = doc.data()
+  if (docData) {
+    indexCollections = docData
+  } else {
+    updateIndexCollections()
+  }
+})
