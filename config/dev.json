@@ -1,0 +1,19 @@
+{
+  "frirebaseAdmin": {
+    "file": "harvard-lms-dev-firebase-adminsdk-5iont-fcfb347832.json",
+    "name": "harvard-af3b0"
+  },
+  "os": "windows",
+  "client": {
+    "url_sysnc": "http://localhost:7020",
+    "firebaseConfig": {
+      "apiKey": "AIzaSyAMOW4kdLRcKFQfvKnolkQbKnkyvFhGvH8",
+      "authDomain": "harvard-af3b0.firebaseapp.com",
+      "projectId": "harvard-af3b0",
+      "storageBucket": "harvard-af3b0.firebasestorage.app",
+      "messagingSenderId": "1042586062710",
+      "appId": "1:1042586062710:web:87c95fbc0036a1451f3457",
+      "measurementId": "G-0DG7BJZ57V"
+    }
+  }
+}

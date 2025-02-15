@@ -1,0 +1,19 @@
+{
+  "frirebaseAdmin": {
+    "file": "harvard-lms-product-a-firebase-adminsdk-fbsvc-104ce3c277.json",
+    "name": "harvard-lms-product-a"
+  },
+  "os": "linux",
+  "client": {
+    "url_sysnc": "https://alpha.giaoducharvard.edu.vn",
+    "firebaseConfig": {
+      "apiKey": "AIzaSyBoUPtokCmlQ03C6SsiC0UMbeXD5HKsxz8",
+      "authDomain": "harvard-lms-product-a.firebaseapp.com",
+      "projectId": "harvard-lms-product-a",
+      "storageBucket": "harvard-lms-product-a.firebasestorage.app",
+      "messagingSenderId": "594944336797",
+      "appId": "1:594944336797:web:d62947b6d73c99d7548574",
+      "measurementId": "G-MHKF3CBZ0L"
+    }
+  }
+}

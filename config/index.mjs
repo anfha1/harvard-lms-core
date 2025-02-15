@@ -1,14 +1,11 @@
-import { readFileSync, existsSync, copyFileSync } from 'fs';
+import { readFileSync, existsSync } from 'fs';
+
+let envName = process.argv[2] || 'dev'
 
 var config = {}
-let path_dir = './config/env.json'
+let path_dir = `./config/${envName}.json`
 if (!existsSync(path_dir)) {
-  let env_prod = './config/env.prod.json'
-  if (existsSync(env_prod)) {
-    copyFileSync(env_prod, path_dir)
-  } else {
-    path_dir = ''
-  }
+  path_dir = ''
 }
 
 if (path_dir) {
@@ -16,7 +13,7 @@ if (path_dir) {
   if (a) {
     config = JSON.parse(a)
   } else {
-    e("Lỗi không đọc được file")
+    console.log("Lỗi không đọc được config")
   }
 }
 
