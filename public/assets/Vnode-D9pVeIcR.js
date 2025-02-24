@@ -1,0 +1,1 @@
+import{A as e}from"./Add-Crurq8q2.js";import{h as a,aa as o,U as t,X as n,Y as r}from"./index-D-D_NnUp.js";const s=a(o,null,{default:()=>a(e)}),l={__name:"Vnode",setup(c){return(_,p)=>(r(),t(n(s)))}};export{l as default};

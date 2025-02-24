@@ -1,11 +1,11 @@
+import path from "path"
 import admin from 'firebase-admin'
 
-import config from './config/index.mjs'
+import config from '#config/index.mjs'
 
 // Khởi tạo Firebase Admin SDK với thông tin xác thực của dự án
 admin.initializeApp({
-  credential: admin.credential.cert(`./data/fixed/${config.frirebaseAdmin.file}`),
-  databaseURL: config.frirebaseAdmin.name
+  credential: admin.credential.cert(path.resolve(`./data/fixed/key/${config.frirebaseAdmin.file}`))
 });
 
 // Lấy tham chiếu đến Firestore

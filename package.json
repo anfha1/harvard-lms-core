@@ -12,6 +12,7 @@
     "prod": "pm2 start main.js prod --name harvard-lms"
   },
   "imports": {
+    "#config/*.mjs": "./config/*.mjs",
     "#controller/*.mjs": "./controller/*.mjs",
     "#model/*.mjs": "./model/*.mjs",
     "#state/*.mjs": "./state/*.mjs"
