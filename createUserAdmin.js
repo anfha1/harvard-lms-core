@@ -1,7 +1,7 @@
 // tạo tài khoản admin
 import { helper } from 'afpk'
 import { usernameValidate, passwordValidate } from 'afpk/validator'
-import { createUsersModel, checkUsernameExist } from './model/user.mjs';
+import { createUsersModel, checkUsernameExist } from './model/users.mjs';
 
 // lấy thông tin username, password từ command line
 const userInfo = {

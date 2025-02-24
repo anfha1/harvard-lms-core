@@ -4,6 +4,7 @@ class SocketManagerState {
     this.deviceToSockets = new Map(); // device_id -> Set(socket_id)
     this.ssidToDevice = new Map();    // ssid -> device_id
     this.deviceToSsid = new Map();    // device_id -> Set(ssid)
+    this.eventOnDeviceClear = []
   }
 
   // Thêm kết nối
@@ -52,6 +53,7 @@ class SocketManagerState {
 
     // Kiểm tra nếu không còn socket nào dùng device_id, thì xóa ssid liên quan
     if (!this.deviceToSockets.has(device_id)) {
+      this.eventOnDeviceClear.map(cb => cb(device_id))
       this.deviceToSsid.delete(device_id);
     }
   }
@@ -69,6 +71,10 @@ class SocketManagerState {
   // Lấy danh sách socket từ device_id
   getSocketsByDevice(device_id) {
     return this.deviceToSockets.has(device_id) ? Array.from(this.deviceToSockets.get(device_id)) : [];
+  }
+
+  onDeviceClear(cb) {
+    this.eventOnDeviceClear.push(cb)
   }
 }
 

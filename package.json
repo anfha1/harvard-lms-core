@@ -1,6 +1,6 @@
 {
   "name": "harvard-lms-core",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Lõi trang web công ty giáo dục harvard",
   "main": "main.js",
   "type": "module",

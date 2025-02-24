@@ -7,13 +7,14 @@ export function createTabModel(data) {
   return db.collection('tabs').add({
     timestamp: now.toMillis(),
     createdAt: now.toISO(),
+    closeAt: '',
     ...data,
   })
 }
 
 export function closeTabModel(id) {
   // thêm thuộc tính close_at vào tab
-  db.collection('tabs').doc(id).update({
+  return db.collection('tabs').doc(id).update({
     closeAt: helper.time.now().toISO(),
   })
 }
