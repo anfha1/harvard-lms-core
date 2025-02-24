@@ -93,5 +93,5 @@ export function getUserById(id) {
 
 // lấy danh sách user theo mảng id
 export function getUsersById(ids) {
-  return db.collection('users').where('id', 'in', ids).get()
+  return db.collection('users').where('__name__', 'in', ids).get()
 }

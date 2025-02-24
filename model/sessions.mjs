@@ -1,9 +1,9 @@
 import { helper } from "afpk"
 import db from './db.mjs'
 
-export function createSessionModel() {
+export function createSessionModel(user_id, device_id) {
   // sử dụng firebase để lưu lại thông tin thiết bị
-  let now = helper.time.now(user_id, device_id)
+  let now = helper.time.now()
   return db.collection('session').add({
     user_id,
     device_id,
@@ -26,12 +26,12 @@ export function deleteSessionModel(id) {
 }
 
 // lấy tất cả phiên đăng nhập theo device_id
-export function getAllSessionModelByDeviceId(device_id) {
+export function getSessionsByDeviceIdModel(device_id) {
   return db.collection('session').where('device_id', '==', device_id).get()
 }
 
 // lấy tất cả phiên đăng nhập theo user_id
-export function getAllSessionModelByUserId(user_id) {
+export function getSessionsByUserIdModel(user_id) {
   return db.collection('session').where('user_id', '==', user_id).get()
 }
 
