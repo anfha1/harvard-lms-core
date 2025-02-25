@@ -3,7 +3,9 @@ import { server, helper } from "afpk"
 
 import config from './config/index.mjs'
 
-import clientHomeController from './controller/client/home.mjs'
+import startController from './controller/start.mjs'
+import authController from './controller/auth.mjs'
+import topicController from './controller/topic.mjs'
 
 let path_ui = path.resolve('./public')
 var { app, io, cookieParser } = server.create({
@@ -32,5 +34,7 @@ app.get("*", (req, res) => {
 
 // routing socket
 io.on("connection", (socket) => {
-  clientHomeController(io, socket, cookieParser)
+  startController(io, socket, cookieParser)
+  authController(socket)
+  topicController(socket)
 });
