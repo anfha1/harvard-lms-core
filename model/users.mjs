@@ -95,3 +95,8 @@ export function getUserById(id) {
 export function getUsersById(ids) {
   return db.collection('users').where('__name__', 'in', ids).get()
 }
+
+// lấy toàn bộ user
+export function getAllUsers() {
+  return db.collection('users').get()
+}

@@ -1,4 +1,7 @@
 // mẫu bảng của 1 user
+
+import topic from "#controller/topic.mjs"
+
 // userCollection = []
 let userDoc = {
   username: "", // tên đăng nhập
@@ -49,4 +52,85 @@ let sessionDoc = {
   // 4 là tài khoản không khả dụng
   createdAt: "", // thời gian tạo
   timestamp: 0, // thời gian tạo dạng số để sắp xếp
+}
+
+// topic
+let topicDoc = {
+  timestamp: 0, // thời gian tạo dạng số để sắp xếp
+  name: "", // tên topic
+  slug: "", // slug của topic
+  color: "", // màu của topic
+  icon: "", // icon của topic
+  createdAt: "", // thời gian tạo
+}
+
+// khối
+let blockDoc = {
+  timestamp: 0, // thời gian tạo dạng số để sắp xếp
+  topic_id: "", // id của topic
+  name: "", // tên topic
+  slug: "", // slug của topic
+  color: "", // màu của topic
+  icon: "", // icon của topic
+  createdAt: "", // thời gian tạo
+}
+
+// lớp
+let classDoc = {
+  timestamp: 0, // thời gian tạo dạng số để sắp xếp
+  topic_id: "", // id của topic
+  block_id: "", // id của block
+  name: "", // tên topic
+  slug: "", // slug của topic
+  color: "", // màu của topic
+  icon: "", // icon của topic
+  createdAt: "", // thời gian tạo
+}
+
+// bài học
+let lessonDoc = {
+  timestamp: 0, // thời gian tạo dạng số để sắp xếp
+  topic_id: "", // id của topic
+  block_id: "", // id của block
+  class_id: "", // id của class
+  name: "", // tên topic
+  img: "", // ảnh của lesson
+  slug: "", // slug của topic
+  color: "", // màu của topic
+  icon: "", // icon của topic
+  createdAt: "", // thời gian tạo
+}
+
+// tài liệu ppt
+let pptDoc = {
+  timestamp: 0, // thời gian tạo dạng số để sắp xếp
+  lesson_id: "", // id của lesson
+  button: {
+    name: "", // tên của nút
+    color: "", // màu
+    icon: "", // icon của tài liệu
+  }
+}
+
+// tài liệu pdf
+let pdfDoc = {
+  timestamp: 0, // thời gian tạo dạng số để sắp xếp
+  lesson_id: "", // id của lesson
+  button: {
+    name: "", // tên của nút
+    color: "", // màu
+    icon: "", // icon của tài liệu
+  }
+}
+
+// tài liệu md
+
+let mdDoc = {
+  timestamp: 0, // thời gian tạo dạng số để sắp xếp
+  lesson_id: "", // id của lesson
+  button: {
+    name: "", // tên của nút
+    color: "", // màu
+    icon: "", // icon của tài liệu
+  }
 }

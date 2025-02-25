@@ -41,12 +41,14 @@ export const rolesState = {
   n2: 'Cập nhật tin tức',
   n3: 'Xóa tin tức',
   n4: 'Cập nhật trạng thái tin tức',
+
+  a1: 'Cập nhật thông tin doanh nghiệp',
 }
 
 export const userTypesState = {
   admin: {
     name: 'Quản trị viên',
-    roles: ['u1', 'u2', 'u3', 'u4', 'u5', 'u6', 'u7', 't1', 't2', 't3', 'k1', 'k2', 'k3', 'l1', 'l2', 'l3', 'gt1', 'gt2', 'gt3', 'gt4', 'gt5', 'n1', 'n2', 'n3'],
+    roles: ['u1', 'u2', 'u3', 'u4', 'u5', 'u6', 'u7', 't1', 't2', 't3', 'k1', 'k2', 'k3', 'l1', 'l2', 'l3', 'gt1', 'gt2', 'gt3', 'gt4', 'gt5', 'n1', 'n2', 'n3', 'a1'],
   },
   // người quản lý tài khoản
   userManager: {

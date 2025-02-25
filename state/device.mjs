@@ -1,7 +1,7 @@
 // mẫu deviceState
 let deviceState = {
   sessions: [],
-  user_info: [
+  users: [
     // tất cả trừ username, password, createdAt, timestamp
     // thêm thông tin userType, roles
   ],

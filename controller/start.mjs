@@ -1,4 +1,5 @@
 import { helper } from "afpk"
+import { arrHelper } from 'afpk/helper'
 
 import { createDeviceModel, getDeviceModel } from '#model/devices.mjs'
 import { createTabModel, closeTabModel } from '#model/tabs.mjs'
@@ -28,6 +29,27 @@ export default function (io, socket, cookieParser) {
   socket.device = {
     status: 0, // 0: Chưa xác thực, 1: Đã xác thực
     id: '', // device_id
+  }
+
+  socket.checkRole = (roles, e) => {
+    if (socket.device.status) {
+      if (deviceState[socket.device.id].users.length > 0) {
+        let checkRole = arrHelper.check2Array(deviceState[socket.device.id].users[0].roles, roles)
+        if (!checkRole && e) {
+          e(403)
+        }
+        return checkRole
+      } else {
+        if (e) {
+          e(401)
+        }
+      }
+    } else {
+      if (e) {
+        e(400)
+      }
+    }
+    return false
   }
 
   // giải mã cookie

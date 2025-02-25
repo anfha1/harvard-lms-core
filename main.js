@@ -6,6 +6,7 @@ import config from './config/index.mjs'
 import startController from './controller/start.mjs'
 import authController from './controller/auth.mjs'
 import topicController from './controller/topic.mjs'
+import userController from './controller/user.mjs'
 
 let path_ui = path.resolve('./public')
 var { app, io, cookieParser } = server.create({
@@ -37,4 +38,5 @@ io.on("connection", (socket) => {
   startController(io, socket, cookieParser)
   authController(socket)
   topicController(socket)
+  userController(socket)
 });
