@@ -1,4 +1,5 @@
 import { getAllUsers } from '#model/users.mjs'
+import { userTypesState } from '#state/userType.mjs'
 
 export default function (socket) {
   socket.on('manageUserGetList', cb => {
@@ -53,5 +54,9 @@ export default function (socket) {
     } else {
       cb(res)
     }
+  })
+
+  socket.on('getUserType', cb => {
+    cb(userTypesState)
   })
 }
